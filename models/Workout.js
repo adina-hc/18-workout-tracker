@@ -1,8 +1,11 @@
+// Import mongoose
 const mongoose = require('mongoose');
 
+// Define Schema
 const Schema = mongoose.Schema;
 
-const RoutineSchema = new Schema({
+// Fields
+const WorkoutSchema = new Schema({
     day: {
         type: Date,
         default: Date.now
@@ -23,9 +26,9 @@ const RoutineSchema = new Schema({
                 type: Number
             },
             sets: {
-                type: Number,
+                type: Number
             },
-            repetitions: {
+            reps: {
                 type: Number
             },
             duration: {
@@ -34,13 +37,11 @@ const RoutineSchema = new Schema({
             distance: {
                 type: Number
             },
-            calories: {
-                type: Number
-            },
         }
     ] 
 });
 
-const Routine = mongoose.model("Routine", RoutineSchema);
+// Export to use in server
+const Workout = mongoose.model("Workout", WorkoutSchema);
 
-module.exports = Routine;
+module.exports = Workout;

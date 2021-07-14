@@ -1,3 +1,4 @@
+// Initiates by landing on the last workout if it exists
 async function initWorkout() {
   const lastWorkout = await API.getLastWorkout();
   console.log("Last workout:", lastWorkout);
@@ -12,9 +13,10 @@ async function initWorkout() {
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
-
+//Renders summary if there is a workout
     renderWorkoutSummary(workoutSummary);
   } else {
+// No summary    
     renderNoWorkoutText()
   }
 }
@@ -44,6 +46,7 @@ function formatDate(date) {
   return new Date(date).toLocaleDateString(options);
 }
 
+// Render workout summary
 function renderWorkoutSummary(summary) {
   const container = document.querySelector(".workout-stats");
 
@@ -57,6 +60,7 @@ function renderWorkoutSummary(summary) {
     totalDistance: "Total Distance Covered"
   };
 
+  // Creates elements in the section
   Object.keys(summary).forEach(key => {
     const p = document.createElement("p");
     const strong = document.createElement("strong");
