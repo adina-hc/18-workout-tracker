@@ -14,7 +14,7 @@ router.get("/exercise"),
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
   };
 
-router.get("/exercise"),
+router.get("/stats"),
   async (req, res) => {
     // Redirects to stats page
     res.sendFile(path.join(__dirname, "../public/stats.html"));
