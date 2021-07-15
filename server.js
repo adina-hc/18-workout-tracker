@@ -2,6 +2,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 
+
 // Define port
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +14,6 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-app.use(require('./routes'))
 
 // Connect to the mongodb on local host (mongo mongoose)
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
