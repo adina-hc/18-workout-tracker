@@ -3,30 +3,29 @@ const db = require("../models");
 
 // Goes to last workouts
 router.get("/workouts", (req, res) => {
-  db.Workout.find({})
-    .then((workoutResults) => {
-      res.json(workoutResults);
-    })
-    .catch((err) => {
-      res.status(400).json(err);
-    });
-  // db.Workout.aggregate([
-  //   {
-  //     $addFields: {
-  //       totalDuration: {
-  //         $sum: "$exercises.duration",
-  //       },
-  //     },
-  //   },
-  // ])
-  //   // last seven workouts
-  //   .limit(7)
-  //   .then((dbWorkouts) => {
-  //     res.json(dbWorkouts);
+  // db.Workout.find({})
+  //   .then((workoutResults) => {
+  //     res.json(workoutResults);
   //   })
   //   .catch((err) => {
   //     res.status(400).json(err);
   //   });
+  db.Workout.aggregate([
+    {
+      $addFields: {
+        totalDuration: {
+          $sum: "$exercises.duration",
+        },
+      },
+    },
+  ])
+
+    .then((dbWorkouts) => {
+      res.json(dbWorkouts);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
 });
 
 // Goes to add exercise by id
