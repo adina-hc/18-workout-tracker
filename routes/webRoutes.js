@@ -1,19 +1,23 @@
+// Imports
 const router = require('express').Router();
 const path = require("path");
 
 router.get("/"),
   async (req, res) => {
-    //code here to take to the exercise html page
-    res.sendFile(path.join(__dirname, "../"))
+    // Redirects to index page
+    res.sendFile(path.join(__dirname, "../public/index.html"))
   };
-
-
-router.get('/exercise'), async (req, res) => {
-    //code here to take to the exercise html page
-
-}
 
 router.get("/exercise"),
   async (req, res) => {
-    //code here to take to the exercise html page
+    // Redirects to exercise page
+    res.sendFile(path.join(__dirname, "../public/exercise.html"));
   };
+
+router.get("/exercise"),
+  async (req, res) => {
+    // Redirects to stats page
+    res.sendFile(path.join(__dirname, "../public/stats.html"));
+  };
+
+  module.exports = router;
