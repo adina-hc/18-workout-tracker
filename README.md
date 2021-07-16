@@ -18,11 +18,18 @@ The user is able to:
 * View the total duration for each workout from the past seven workouts on the `stats` page
 
 
-
-
 ## Resources
 Mongoose
 Express
 MongoDB
 MongoDB Atlas
 Heroku
+
+
+## Link to Application
+
+[Heroku](https://rocky-gorge-68245.herokuapp.com/)
+
+## Link to GitHub
+
+[Heroku](https://github.com/adina-hc/18-workout-tracker)
