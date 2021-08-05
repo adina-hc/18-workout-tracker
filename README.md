@@ -32,4 +32,4 @@ Heroku
 
 ## Link to GitHub
 
-[Heroku](https://github.com/adina-hc/18-workout-tracker)
+[GitHub](https://github.com/adina-hc/18-workout-tracker)
